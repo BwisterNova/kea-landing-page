@@ -1,0 +1,25 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Theme variables for light and dark mode */
+body.light {
+  --bg: #e4e4e4;
+  --text: #222;
+  --card-bg: #f9fafb;
+  --accent: #3b82f6;
+}
+body.dark {
+  --bg: #18181b;
+  --text: #f4f4f4;
+  --card-bg: #232326;
+  --accent: #60a5fa;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}

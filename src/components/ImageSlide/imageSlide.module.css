@@ -1,0 +1,212 @@
+.slider {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.imageSlider {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Horizontal flex row to place two slides side by side on desktop */
+.track {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+/* Each slide is stacked only the active one is visible */
+.slide {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+}
+
+.slide img {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  display: block;
+}
+
+/* Visible Slide */
+.active {
+  opacity: 1;
+  position: relative;
+}
+
+/* Bottom text overlay */
+.caption {
+  position: absolute;
+  bottom: 0;
+
+  padding: 1rem 1.2rem;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.25) 60%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.captionText h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.captionText p {
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.cta {
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  margin-top: 0.8rem;
+  font-weight: 700;
+  background: #fff;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  font-size: 1ch;
+  width: 10rem;
+}
+
+.cta:hover {
+  background: #eee;
+  transform: translateY(-2px);
+}
+
+/* Container for dots + arrows*/
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 1rem;
+}
+
+.dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: background 0.3s;
+  color: #ccc;
+  border: none;
+}
+
+.dotActive {
+  background: #020202;
+}
+
+/* Arrows buttons */
+.arrows {
+  position: relative;
+  transform: translateX(100%);
+}
+
+.arrows button {
+  background: #c4c4c4;
+  color: #000;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  margin-left: 0.4rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 50%;
+  transition: background 0.3s;
+  position: relative;
+  right: 0;
+}
+
+.arrows button:hover {
+  background: #b2b2b2;
+}
+
+@media (max-width: 768px) {
+  .track {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imageSlider {
+    gap: 0;
+  }
+
+  .arrows {
+    transform: none;
+  }
+
+  /* Hide second card when on mobile */
+  .desktopOnly {
+    display: none;
+  }
+
+  .slide img {
+    /* width: 335px; */
+    width: 600px;
+    height: 50vh;
+  }
+
+  .caption {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    bottom: 0;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.4) 60%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  .captionText h2 {
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  .captionText p {
+    font-size: 10px;
+    line-height: 1.3;
+  }
+
+  .cta {
+    font-size: 7px;
+    font-weight: 500;
+  }
+
+  .controls {
+    gap: 1rem;
+  }
+
+  .dots {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide img {
+    width: 335px;
+    height: 50vh;
+  }
+}

@@ -1,0 +1,81 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.tabBar {
+  position: relative;
+  display: flex;
+  background: rgba(225, 225, 255, 0.7);
+  border-radius: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+/* Sliding Highlight */
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% / 7); /*The seven tabs*/
+  height: 100%;
+  background: #ffffff;
+  border-radius: 2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.tab {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  z-index: 1; /*To stay above the slider*/
+}
+
+.tab:not(:last-child) {
+  margin-right: 0.5rem; /* gap between icons*/
+}
+
+.icon {
+  fill: #555;
+  transition: fill 0.3s;
+}
+
+.active .icon {
+  fill: #222;
+}
+
+/* Tooltip on hover */
+.tooltip {
+  position: absolute;
+  bottom: -2 2rem;
+  background: rgba(225, 225, 255, 0.6);
+  color: #595757;
+  font-size: 0.75rem;
+  padding: 0.3rem;
+  border-radius: 0.4rem;
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.tab:hover .tooltip {
+  opacity: 1;
+  transform: translateY(20px);
+}
+
+@media (max-width: 768px) {
+  .tab:not(:last-child) {
+    margin-right: 0; /*no gap between icons*/
+  }
+}
