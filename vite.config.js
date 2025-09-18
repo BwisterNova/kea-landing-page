@@ -4,5 +4,5 @@ import react from "@vitejs/plugin-react";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/kea-landing-page",
+  base: process.env.DEPLOY_TARGET === "GH" ? "/kea-landing-page" : "/",
 });
