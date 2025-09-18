@@ -1,7 +1,7 @@
 import "./App.css";
 import TopBar from "./components/TopBar/TopBar";
 import Footer from "./Page/Footer/Footer";
-import LandingPage from "./page/Landing-Page/LandingPage";
+import LandingPage from "./Page/LandingPage/LandingPage";
 
 function App() {
   return (

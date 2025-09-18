@@ -40,7 +40,16 @@
 .right {
   padding-right: 2rem;
 }
+@media (max-width: 830px) {
+  .container {
+    flex-wrap: nowrap;
+    padding: 1rem 1rem;
+  }
 
+  .right {
+    padding-right: 2rem;
+  }
+}
 @media (max-width: 768px) {
   .container {
     padding: 1rem 0.7rem;

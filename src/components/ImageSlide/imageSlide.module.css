@@ -143,6 +143,12 @@
   background: #b2b2b2;
 }
 
+@media (max-width: 1024px) {
+  .slide img {
+    height: 33vh;
+  }
+}
+
 @media (max-width: 768px) {
   .track {
     flex-direction: column;
